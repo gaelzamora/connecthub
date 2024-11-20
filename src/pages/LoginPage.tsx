@@ -93,7 +93,6 @@ function LoginPage() {
               <Link to='/register' className='cursor-pointer'>¿Aun no tienes una cuenta?</Link>
               <p>¿Olvidaste tu contraseña?</p>
             </div>
-            <button onClick={logout}>Cerrar sesion</button>
           </div>
         </div>
         <div className="rounded-lg w-96 mx-auto shadow-lg ">
