@@ -7,7 +7,10 @@ import toast from "react-hot-toast"
 import { useNavigate } from "react-router-dom"
 import Logo from '../images/logo/659f6329bfa9da358332d95a.png'
 import {users} from "../data/users"
+import {Swiper, SwiperSlide} from 'swiper/react'
+import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules'
 
+ 
 function RegisterPage() {
   const [first_name, setFirstName] = useState("")
   const [last_name, setLastName] = useState("")
@@ -25,7 +28,6 @@ function RegisterPage() {
       },
       onError: () => {
         toast.error("Error!")
-        console.log("Error")
       }
   })
 
@@ -50,14 +52,24 @@ function RegisterPage() {
             <p className="text-md text-gray-200 font-semibold mt-10">All-in-one solution to for your business in the state. Form a new company from scratch or onboard your existing US company.</p>
           </div>
         <div className="bg-[#004cdf] relative w-3/4 mx-auto mt-10 p-4 rounded-xl">
-          {users.map(user => (
-            <>
-              <p className="text-xl text-gray-100">{user.title}</p>
-              <p className="text-xs pt-4 text-gray-200">{user.content}</p>
-              <img src={user.photo} alt="User profile" className="h-10 w-10 mt-3 rounded-full object-cover" />
-              <p className="text-gray-100 absolute left-16 bottom-6">{user.name}</p>
-            </>
-          ))}
+          <Swiper
+            modules={[Pagination, Scrollbar]}
+            slidesPerView={1}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: true
+            }}
+            pagination={{ clickable: true }}
+          >
+            {users.map(user => (
+              <SwiperSlide>
+                  <p className="text-xl text-gray-100">{user.title}</p>
+                  <p className="text-xs pt-4 text-gray-200">{user.content}</p>
+                  <img src={user.photo} alt="User profile" className="h-10 w-10 mt-3 rounded-full object-cover" />
+                  <p className="text-gray-100 absolute left-14 bottom-2">{user.name}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
       <section className="col-span-4">

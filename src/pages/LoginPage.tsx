@@ -25,7 +25,7 @@ function LoginPage() {
       const tokenDecoded: Token = jwtDecode(token)
       const first_name = tokenDecoded.first_name
       toast.success(`Bienvenido/a ${first_name}`)
-    },
+    } ,
     onError: () => {
       toast.error("Hubo un error")
     }
