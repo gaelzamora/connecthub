@@ -12,8 +12,8 @@ function HomePage() {
       <section className='col-span-1 grid grid-rows-6'>
         <div className='text-center row-span-1'>
           <div className='w-full relative'>
-            <img src={LogOut} alt="User profile" className='cursor-pointer h-20 w-20 absolute object-cover hidden rounded-full md:left-28 md:flex border-stone-200 border' onClick={logout} />
-            <img src={PersonProfile} alt="User profile" className='h-20 w-20 absolute object-cover rounded-full hidden md:right-24 md:flex' />
+            <img src={LogOut} alt="User profile" className='cursor-pointer h-20 w-20 absolute object-cover hidden -translate-x-6 rounded-full md:left-28 md:flex border-stone-200 border' onClick={logout} />
+            <img src={PersonProfile} alt="User profile" className='h-20 w-20 absolute object-cover rounded-full translate-x-3 hidden md:right-24 md:flex' />
           </div>
           <div className='mt-20'>
             <p className='text-gray-900 font-bold text-lg'>Yourname</p>
@@ -29,10 +29,10 @@ function HomePage() {
         ))}
         </div>
       </section>
-      <section className='col-span-3 bg-yellow-400'>
+      <section className='col-span-3'>
         section 2
       </section>
-      <section className='col-span-1 bg-blue-300'>
+      <section className='col-span-1'>
         section 3
       </section>
 
