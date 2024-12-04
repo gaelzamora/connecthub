@@ -3,15 +3,15 @@ export interface Token {
     exp: number;
     is_staff: boolean;
     email: string;
-    name: string;
+    username: string
     first_name: string
     last_name: string;
-    avatar: File | null;
+    image: string | null;
 }
 
 export interface User {
     id?: number;
-    avatar: File | null;
+    avatar: string | null;
     email: string;
     first_name: string;
     last_name: string;
